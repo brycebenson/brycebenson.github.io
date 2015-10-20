@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<main class="main" role="main">
+  <section class="main__hero">
+      <div class="main__hero-wrap">
+          <section class="main__hero-content wrap">
+              <h2 class="main__hero-title">Bryce Benson</h2>
+              <p class="main__hero-copy">Front End Developer</p>
+          </section>
+      </div>
+  </section>
+  <section class="main__content wrap">
+      {% highlight scss %}
+      .bryce {
+        @include accessibility;
+        code: $modular;
+        markup: semantic;
+        specificity: low;
+        reusability: high;
+        @extend %performance;
+      }
+      {% endhighlight %}
+      <p class="main__copy">This site was built using Jekyll, responsive mobile-first SCSS, and a touch of vanilla JavaScript. Take a look at the repo <a target="_blank" href="http://github.com/brycebenson">here</a>.</p>
+      <p class="main__copy">Props to <a href="http://pokepalettes.com/#oddish" title="Poke Palettes" target="_blank">Poke Palettes</a> for the design inspiration.</p>
+  </section>
+</main>

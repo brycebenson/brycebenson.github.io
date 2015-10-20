@@ -1,0 +1,228 @@
+// Main Content Area
+.main {
+    margin: 0;
+}
+
+.main__content {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main__heading {
+    text-shadow: 1px 1px $darkblue;
+    margin: .5rem 0;
+}
+
+.main__copy {
+    font-size: .875rem;
+    margin: .5rem 0;
+    text-align: justify;
+    @include media-query(small-and-up) {
+        font-size: 1rem;
+    }
+}
+
+.main__listing {
+    margin: 1rem 0;
+    @include media-query(small-and-up) {
+        @include span(4 of 12);
+        &:last-child {
+            @include span(4 last);
+        }
+    }
+}
+
+.main__list {
+    margin: 0;
+}
+
+.main__subheading {
+    margin: .5rem 0;
+}
+
+.main__hero {
+    background: url(/img/screens-sm.jpg) no-repeat center center;
+    background-size: cover;
+    height: 20rem;
+    position: relative;
+    @include media-query(lap-and-up) {
+        height: 35rem;
+        background: url(/img/screens-md.jpg) no-repeat center center;
+        background-size: cover;
+    }
+    @include media-query(desk) {
+        background: url(/img/screens-lg.jpg) no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.main__hero--about {
+    background: url(/img/hero-sm.jpg) no-repeat center left;
+    background-size: cover;
+    @include media-query(lap-and-up) {
+        height: 35rem;
+        background: url(/img/hero-md.jpg) no-repeat center center;
+        background-size: cover;
+    }
+    @include media-query(desk) {
+        background: url(/img/hero-lg.jpg) no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.main__hero--resume {
+    background: url(/img/thrash.jpg) no-repeat center left;
+    background-size: cover;
+}
+
+.main__hero-wrap {
+    background: $darkgray;
+    opacity: .8;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.main__hero-content {
+    padding: 1rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.main__hero-title {
+    text-shadow: 1px 1px $green;
+    margin: 0;
+}
+
+.main__hero-link {
+    color: $white;
+}
+
+.main__hero-copy {
+    margin: 0;
+    font-size: .875rem;
+}
+
+// Work
+.work {
+    margin: 2rem 0 3rem;
+    background: lighten($darkgray, 25%);
+    //box-shadow: 2px 2px 2px lighten($darkgray, 40%);
+}
+
+.work__figure {
+    padding: 0;
+    margin: 0;
+    min-height: 16rem;
+    @include media-query(lap-and-up) {
+        @include span(5);
+    }
+    @include media-query(desk) {
+        @include span(4);
+    }
+}
+
+.work__link {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.work__content {
+    padding: 0 1rem 1rem;
+    @include media-query(lap-and-up) {
+        @include span(7 last);
+        padding: 0 1rem 0 0;
+    }
+    @include media-query(desk) {
+        @include span(8 last);
+    }
+}
+
+.work__heading {
+    font-size: 1.25rem;
+    color: $lightblue;
+    margin: .5rem 0;
+    line-height: 1.2;
+}
+
+.work__readmore {
+    font-family: $header-font;
+    display: block;
+    background: $green;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .5rem 0;
+    font-weight: 500;
+    transition: all .2s ease-in-out;
+    margin: .5rem auto;
+    &:hover {
+        background: $lightblue;
+    }
+    @include media-query(small-and-up) {
+        max-width: 180px;
+        margin: .5rem 0;
+    }
+}
+
+// Contact
+.contact-form {
+    margin: 2rem auto;
+    @include media-query(lap-and-up) {
+        max-width: 850px;
+    }
+}
+
+.contact-form__fields {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-form__label {
+    display: block;
+    font-weight: 600;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+    background: $darkgray;;
+    border: 2px solid white;
+    width: 100%;
+    margin: .25rem 0 1rem;
+    padding: 1rem;
+}
+
+.contact-form__half {
+    @include media-query(lap-and-up) {
+        @include span(6);
+    }
+
+}
+
+.contact-form__half--last {
+     @include media-query(lap-and-up) {
+        @include span(6 last);
+    }
+}
+
+.contact-form__submit {
+    border: none;
+    display: block;
+    background: $red;
+    width: 200px;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.125rem;
+    margin: 0 auto;
+    transition: all .5s ease-in-out;
+    &:hover {
+        background: darken($red, 10%);
+    }
+}

@@ -1,0 +1,25 @@
+---
+layout: page
+title: Work
+permalink: /work/
+---
+
+<main class="main" role="main">
+    <section class="main__content">
+        <h2 class="main__heading">Work</h2>
+        <p class="main__copy">Recent Projects:</p>
+        {% for post in site.posts %}
+            <article class="work clearfix">
+                <a class="work__link" href="{{ post.url | prepend: site.baseurl }}">
+                    <figure class="work__figure" style="background: url(/img/{{ post.listimg }}) no-repeat center center; background-size: cover;">
+                </a>
+                </figure>
+                <section class="work__content">
+                    <h3 class="work__heading"><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></h3>
+                    {{ post.excerpt }}
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="work__readmore" title="{{ post.title }}">Read More</a>
+                </section>
+            </article>
+        {% endfor %}
+    </section>
+  </main>

@@ -1,0 +1,158 @@
+// Media Queries
+@mixin media-query($mq) {
+
+    $breakpoint-found: false;
+
+    // Loop through the list of breakpoints we’ve provided in our settings file.
+    @each $breakpoint in $breakpoints {
+
+        // Grab the alias and the condition from their respective locations in
+        // the list.
+        $alias:     nth($breakpoint, 1);
+        $condition: nth($breakpoint, 2);
+
+        // If the media query we’ve specified has an alias and a condition...
+        @if $mq == $alias and $condition {
+
+            // ...tell the mixin that we’ve found it...
+            $breakpoint-found: true;
+
+            // ...and spit it out here.
+            @media #{$condition} {
+                @content;
+            }
+
+        }
+
+    }
+
+    // If the user specifies a non-exitent alias, send them a warning.
+    @if $breakpoint-found == false{
+        @warn "Oops! Breakpoint ‘#{$mq}’ does not exist."
+    }
+
+}
+
+$breakpoints: (
+    "small-and-up"  "screen and (min-width: 30em)",
+    "palm"          "screen and (max-width: 44.9375em)",
+    "lap"           "screen and (min-width: 45em) and (max-width: 63.9375em)",
+    "lap-and-up"    "screen and (min-width: 45em)",
+    "portable"      "screen and (max-width: 63.9375em)",
+    "desk"          "screen and (min-width: 55em)",
+    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
+) !default;
+
+$header-font: 'Source Code Pro', 'Open Sans', helvetica, arial, sans-serif;
+$copy-font: 'Open Sans', helvetica, arial, sans-serif;
+
+$darkgray: #292929;
+$green: #8bac31;
+$red: #ee3931;
+$darkblue: #29394a;
+$lightblue: #94b4c5;
+$darkgreen: #9cd54a;
+$lightgreen: #c5e67b;
+$white: #ffffff;
+
+.green {
+    color: $green;
+}
+
+.darkgreen {
+    color: $green;
+}
+
+.red {
+    color: $red;
+}
+
+.darkblue {
+    color: $darkblue;
+}
+
+.lightblue {
+    color: $lightblue;
+}
+
+.lightgreen {
+    color: $lightgreen;
+}
+
+.green-bg {
+    background: $green;
+    @include media-query(lap-and-up) {
+        &.nav__item {
+            background: transparent;
+            border-top: 4px solid $green;
+            &:hover {
+                background: $green;
+            }
+        }
+    }
+}
+
+.darkgreen-bg {
+    background: $darkgreen;
+    @include media-query(lap-and-up) {
+        &.nav__item {
+            background: transparent;
+            border-top: 4px solid $darkgreen;
+            &:hover {
+                background: $darkgreen;
+            }
+        }
+    }
+}
+
+.red-bg {
+    background: $red;
+    @include media-query(lap-and-up) {
+        &.nav__item {
+            background: transparent;
+            border-top: 4px solid $red;
+            &:hover {
+                background: $red;
+            }
+        }
+    }
+}
+
+.darkblue-bg {
+    background: $darkblue;
+    @include media-query(lap-and-up) {
+        &.nav__item {
+            background: transparent;
+            border-top: 4px solid $darkblue;
+            &:hover {
+                background: $darkblue;
+            }
+        }
+    }
+}
+
+.lightblue-bg {
+    background: $lightblue;
+    @include media-query(lap-and-up) {
+        &.nav__item {
+            background: transparent;
+            border-top: 4px solid $lightblue;
+            &:hover {
+                background: $lightblue;
+            }
+        }
+    }
+}
+
+.lightgreen-bg {
+    background: $lightgreen;
+    @include media-query(lap-and-up) {
+        &.nav__item {
+            background: transparent;
+            border-top: 4px solid $lightgreen;
+            &:hover {
+                background: $lightgreen;
+            }
+        }
+    }
+}

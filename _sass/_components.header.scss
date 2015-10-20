@@ -1,0 +1,110 @@
+.nav-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trigger {
+    position: relative;
+    cursor: pointer;
+    padding: 10px 35px 16px 0;
+    float: right;
+    right: 1rem;
+    margin-top: -8rem;
+    .trigger__bar,
+    .trigger__bar:before,
+    .trigger__bar:after {
+        cursor: pointer;
+        border-radius: 1px;
+        height: 5px;
+        width: 35px;
+        background: $white;;
+        position: absolute;
+        display: block;
+        content: '';
+        transition: all .25s ease-in-out;
+    }
+    .trigger__bar:before {
+        top: -10px;
+    }
+    .trigger__bar:after {
+        bottom: -10px;
+    }
+    &.open .trigger__bar {
+        background: transparent;
+    }
+    &.open .trigger__bar:before,
+    &.open .trigger__bar:after {
+        top: 0;
+    }
+    &.open .trigger__bar:before {
+        transform: rotate(45deg);
+    }
+    &.open .trigger__bar:after {
+        transform: rotate(-45deg);
+    }
+    @include media-query(lap-and-up) {
+        display: none;
+    }
+}
+
+.nav {
+    transition: all .3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    @include media-query(lap-and-up) {
+        max-height: none;
+    }
+}
+
+.show {
+    max-height: 13rem;
+}
+
+.nav__item {
+    display: block;
+    font-weight: 700;
+    font-family: $header-font;
+    text-align: center;
+    font-size: 1.25rem;
+    padding: .25rem 0;
+    color: $white;
+    transition: all .33s ease-in-out;
+    @include media-query(lap-and-up) {
+        @include span(2.56 no-gutter);
+    }
+}
+
+.header__wrap {
+    margin: 1rem 0;
+}
+
+.header__siteinfo {
+     @include media-query(lap-and-up) {
+        @include span(3);
+    }
+}
+
+.header__nav {
+    @include media-query(lap-and-up) {
+        @include span(9 last);
+    }
+}
+
+.header__title {
+    text-align: center;
+    color: $white;
+    margin: 0 auto .5rem;
+    text-shadow: 1px 1px $green;
+    line-height: 1;
+    font-size: 1.5rem;
+    padding: 0 .5rem 0;
+    max-width: 250px;
+}
+
+.header__subtitle {
+    text-align: center;
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1;
+}

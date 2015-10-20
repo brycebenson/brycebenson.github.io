@@ -1,0 +1,77 @@
+$susy: (columns: 12, gutters:1/4, container: 1200px, global-box-sizing: border-box);
+
+// Box Sizing
+@include border-box-sizing;
+
+@mixin height($size) {
+  height: $size;
+  height: calculateRem($size);
+}
+
+// Clearfix
+.clearfix,
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+html {
+    line-height: 1.5;
+    font-size: 1rem;
+    color: $white;;
+    background: $darkgray;
+    overflow-y: scroll;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: $copy-font;
+}
+
+h1, h2, h3, h4 {
+    font-family: $header-font;
+}
+
+a {
+    color: $lightblue;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wrap {
+    @include container;
+}
+
+.stripes {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 .33rem;
+}
+.stripe {
+    @include span(2.54 no-gutters);
+    height: .5rem;
+    transform: skewX(-60deg);
+
+}
+
+.hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
