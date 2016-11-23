@@ -13,3 +13,11 @@ github_username:  brycebenson
 
 # Build settings
 markdown: kramdown
+
+exclude:
+  - package.json
+  - node_modules
+  - gulpfile.js
+
+source:       .
+destination:  ./_site
