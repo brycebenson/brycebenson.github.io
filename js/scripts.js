@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // Trigger nav
     var trigger = document.querySelector('.trigger'),
-        nav = document.querySelector('.nav');
+        nav = document.querySelector('.nav'),
+        year = document.querySelector('.year'),
+        date = new Date().getFullYear();
+
+    year.innerHTML = date;
 
     trigger.addEventListener('click', navToggle, false);
 
