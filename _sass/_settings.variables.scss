@@ -81,15 +81,6 @@ $white: #ffffff;
 
 .green-bg {
     background: $green;
-    @include media-query(lap-and-up) {
-        &.nav__item {
-            background: transparent;
-            border-top: 4px solid $green;
-            &:hover {
-                background: $green;
-            }
-        }
-    }
 }
 
 .darkgreen-bg {
@@ -107,15 +98,6 @@ $white: #ffffff;
 
 .red-bg {
     background: $red;
-    @include media-query(lap-and-up) {
-        &.nav__item {
-            background: transparent;
-            border-top: 4px solid $red;
-            &:hover {
-                background: $red;
-            }
-        }
-    }
 }
 
 .darkblue-bg {

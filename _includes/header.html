@@ -2,16 +2,17 @@
   <div class="nav-wrap">
       <header class="header__wrap clearfix">
         <section class="header__siteinfo">
-          <h1 class="header__title"><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/img/logo.svg" alt=""></a></h1>
+          <h1 class="header__title"><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/img/logo-bb.svg" alt=""></a></h1>
           <a href="#" class="trigger"><span class="trigger__bar"></span></a>
         </section>
         <section class="header__nav">
           <nav class="nav clearfix" role="navigation">
-              <a href="/index.html" class="nav__item green-bg">Home</a>
-              <a href="/about/" class="nav__item red-bg">About</a>
-              <a href="/work/" class="nav__item darkblue-bg">Work</a>
-              <a href="/resume/" class="nav__item lightblue-bg">Resume</a>
-              <a href="/contact/" class="nav__item darkgreen-bg">Contact</a>
+            {% assign pages = site.pages | sort: 'weight' %}
+              {% for p in pages %}
+                {% if p.menu == 'main' %}
+                     <a href="{{ site.baseurl }}{{ p.url }}" class="nav__item">{{ p.title }}</a>
+                {% endif %}
+              {% endfor %}
         </nav>
         </section>
       </header>

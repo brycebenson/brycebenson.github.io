@@ -8,14 +8,14 @@
     cursor: pointer;
     padding: 10px 35px 16px 0;
     float: right;
-    right: 1rem;
-    margin-top: -8rem;
+    right: 2rem;
+    margin-top: -4.5rem;
     .trigger__bar,
     .trigger__bar:before,
     .trigger__bar:after {
         cursor: pointer;
         border-radius: 1px;
-        height: 5px;
+        height: 4px;
         width: 35px;
         background: $white;;
         position: absolute;
@@ -58,7 +58,7 @@
 }
 
 .show {
-    max-height: 13rem;
+    max-height: 20rem;
 }
 
 .nav__item {
@@ -67,11 +67,57 @@
     font-family: $header-font;
     text-align: center;
     font-size: 1.25rem;
-    padding: .25rem 0;
+    padding: .5rem 0;
     color: $white;
     transition: all .33s ease-in-out;
+    background: $green;
     @include media-query(lap-and-up) {
         @include span(2.56 no-gutter);
+        background: transparent;
+        border-top: 4px solid $green;
+        &:hover {
+            background: $green;
+        }
+    }
+    &:nth-of-type(2n) {
+        background: $red;
+        @include media-query(lap-and-up) {
+            background: transparent;
+            border-top: 4px solid $red;
+            &:hover {
+                background: $red;
+            }
+        }
+    }
+    &:nth-of-type(3n) {
+        background: $darkblue;
+        @include media-query(lap-and-up) {
+            background: transparent;
+            border-top: 4px solid $darkblue;
+            &:hover {
+                background: $darkblue;
+            }
+        }
+    }
+    &:nth-of-type(4n) {
+        background: $lightblue;
+        @include media-query(lap-and-up) {
+            background: transparent;
+            border-top: 4px solid $lightblue;
+            &:hover {
+                background: $lightblue;
+            }
+        }
+    }
+    &:nth-of-type(5n) {
+        background: $lightgreen;
+        @include media-query(lap-and-up) {
+            background: transparent;
+            border-top: 4px solid $lightgreen;
+            &:hover {
+                background: $lightgreen;
+            }
+        }
     }
 }
 
@@ -99,7 +145,10 @@
     line-height: 1;
     font-size: 1.5rem;
     padding: 0 .5rem 0;
-    max-width: 250px;
+    max-width: 100px;
+    @include media-query(lap-and-up) {
+        max-width: 125px;
+    }
 }
 
 .header__subtitle {
