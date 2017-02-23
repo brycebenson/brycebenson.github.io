@@ -7,7 +7,7 @@ const gutil = require('gulp-util');
 const sass = require('gulp-sass');
 
 const siteRoot = '_site';
-const cssFiles = '_css/**/*.?(s)css';
+const cssFiles = '_sass/**/*.?(s)css';
 
 gulp.task('css', () => {
   gulp.src(cssFiles)
