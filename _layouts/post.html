@@ -5,7 +5,7 @@ layout: default
     <section class="main__hero" {% if page.bgimg %} style="background-image: url(/img/{{ page.bgimg }}); background-size: cover;"{% endif %}>
         <div class="main__hero-wrap">
             <section class="main__hero-content wrap">
-            <h2 class="main__hero-title"><a class="main__hero-link" href="{{page.link}}" title="{{page.title}}" target="_blank">{{page.title}}</a></h2>
+            <h2 class="main__hero-title">{% if page.link %}<a class="main__hero-link" href="{{page.link}}" title="{{page.title}}" target="_blank">{% endif %}{{page.title}}{% if page.link %}</a>{% endif %}</h2>
             </section>
         </div>
     </section>

@@ -40,6 +40,7 @@ $breakpoints: (
     "lap-and-up"    "screen and (min-width: 45em)",
     "portable"      "screen and (max-width: 63.9375em)",
     "desk"          "screen and (min-width: 55em)",
+    "xl"          "screen and (min-width: 1200px)",
     "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
 ) !default;
 
@@ -52,7 +53,7 @@ $red: #ee3931;
 $darkblue: #29394a;
 $lightblue: #94b4c5;
 $darkgreen: #9cd54a;
-$lightgreen: #c5e67b;
+$lightgreen: darken(#c5e67b, 20%);
 $white: #ffffff;
 
 .green {

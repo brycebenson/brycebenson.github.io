@@ -3,20 +3,8 @@
  */
 .highlight {
     background: $darkgray;
-    margin: 0 auto;
-    width: 100%;
-    @include media-query(small-and-up) {
-        width: 66%;
-    }
-
-    @include media-query(lap-and-up) {
-        width: 40%;
-    }
-
-    @include media-query(desk) {
-        width: 30%;
-    }
-
+    margin: 2rem auto;
+    width: 280px;
     .c     { color: #998; font-style: italic } // Comment
     .err   { color: $lightblue; } // Error
     .k     { font-weight: bold } // Keyword

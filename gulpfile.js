@@ -11,7 +11,10 @@ const cssFiles = '_sass/**/*.?(s)css';
 
 gulp.task('css', () => {
   gulp.src(cssFiles)
-    .pipe(sass())
+    .pipe(sass({
+          outputStyle: 'compressed',
+          includePaths: ['node_modules/susy/sass']
+      }))
     .pipe(concat('all.css'))
     .pipe(gulp.dest('assets'));
 });
